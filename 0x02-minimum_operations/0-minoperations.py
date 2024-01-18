@@ -1,18 +1,20 @@
-#!/usr/bin/python3
-""" Minimum Operations """
-
+#!/usr/bin/env python3
 
 def minOperations(n):
-    """ Minimum Operations """
+    """ Calculate minimum operations for reaching n characters
+    """
+
     if n <= 1:
         return 0
     else:
-        i = 2
-        c = 0
-        while i <= n:
-            if n % i == 0:
-                c += i
-                n = n / i
+        current_factor = 2
+        total_operations = 0
+
+        while current_factor <= n:
+            if n % current_factor == 0:
+                total_operations += current_factor
+                n = n / current_factor
             else:
-                i += 1
-        return c
+                current_factor += 1
+
+        return total_operations
