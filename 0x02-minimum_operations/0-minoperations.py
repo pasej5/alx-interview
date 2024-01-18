@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+Calculate minimum operations for reaching n characters
+"""
+
 
 def minOperations(n):
     """ Calculate minimum operations for reaching n characters
