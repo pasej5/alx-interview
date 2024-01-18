@@ -1,17 +1,18 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+""" Minimum Operations """
+
+
 def minOperations(n):
-    '''
-    Minimum Operations
-    '''
+    """ Minimum Operations """
     if n <= 1:
         return 0
-    operations = 0
-    i = 2
-    while i * i <= n:
-        while n % i == 0:
-            operations += i
-            n //= i
-        i += 1
-    if n > 1:
-        operations += n
-    return operations
+    else:
+        i = 2
+        c = 0
+        while i <= n:
+            if n % i == 0:
+                c += i
+                n = n / i
+            else:
+                i += 1
+        return c
