@@ -16,7 +16,7 @@ def findPrimesToN(n):
 
     """
 
-    if (type(n) is not int or n < 0):
+    if (not isinstance(n, int) or n < 0):
         return None
 
     # logically primes should be a set, but we want it to remain ordered
@@ -49,11 +49,11 @@ def isWinner(x, nums):
         (None): on failure or no winner found
 
     """
-    if (type(nums) is not list or not all([type(n) is int for n in nums]) or
-            not all([n > -1 for n in nums])):
+    if (not isinstance(nums, list) or not all(
+            [isinstance(n, int) for n in nums]) or not all([n > -1 for n in nums])):
         return None
 
-    if (type(x) is not int or x != len(nums)):
+    if (not isinstance(x, int) or x != len(nums)):
         return None
 
     nums.sort()
